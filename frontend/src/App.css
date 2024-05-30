@@ -1,0 +1,116 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ol, ul { list-style: none; }
+img { border: none; vertical-align: top; }
+/* button {
+  background-color: #3a95ea;
+  border: 1px solid #2d87da;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 15px;
+} */
+
+/* Nội dung layout */
+layout {
+  margin: 20px auto;
+  width: 1024px;
+}
+
+/* header {
+  background-color: #92dfc8;
+  height: 80px;
+  line-height: 80px;
+} */
+
+/* #content {
+  margin-right: 20px;
+  width: 754px;
+} */
+/* #content h1 {
+  font-size: 30px;
+  background-color: #e9e9e9;
+  padding: 5px 0  5px 10px;
+  margin: 20px 0 30px;
+} */
+/* #content .item-list h2 {
+  margin-bottom: 10px;
+} */
+
+/* aside {
+  background-color: white;
+  width: 270px;
+  height: 763px;
+  margin-top: 30px;
+  font-size: 20px;
+  border-top-right-radius: 1.88rem;
+  border-bottom-right-radius: 1.88rem;
+  
+} */
+
+body {
+  background: black;
+}
+
+header {
+  background: white;
+  position: fixed;
+  height: 100px;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 0px;  
+  padding: 5px;
+  margin-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+footer {
+  font-weight: bold;
+  height: 260px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}

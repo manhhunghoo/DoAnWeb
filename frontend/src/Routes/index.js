@@ -28,6 +28,7 @@ import ShowSubjects from "../Pages/Schoolweb/admin/subjectRelated/ShowSubjects";
 import ShowTeachers from "../Pages/Schoolweb/admin/teacherRelated/ShowTeachers";
 import Profile from "../components/NavBar/Profile";
 import ProfileDetail from "../components/ProfileDetail";
+import TodolistLayout from "../components/Layout/TodolistLayout";
 
 
 const publicRoutes = [
@@ -49,7 +50,7 @@ const privateRoutes = [
   { path: routesConfig.schoolweb, component: StudentDashboard, layout: DangnhapLayout },
   { path: routesConfig.hocnhomitem, component: HocnhomDetail, layout: HocnhomDetailLayout },
   { path: routesConfig.setting, component: AdminHomePage, layout: KhoahocitemDetailLayout },
-  { path: routesConfig.todolist, component: Board },
+  { path: routesConfig.todolist, component: Board, layout: TodolistLayout },
   { path: routesConfig.setprofile, component: Profile },
   { path: routesConfig.profiledetail, component: ProfileDetail }
 ]

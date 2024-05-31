@@ -13,8 +13,7 @@ import config from "../config/routes"
 import Search from "./NavBar/Search"
 import useUser from "../hook/useUser"
 import useNotificationEvent from "../hook/useNotificationEvent"
- import LogoUiT from '../assets/LogoUIT.svg' 
-
+import LogoUIT from "../assets/LogoUIT.svg"
 const Navbar = () => {
   const { user } = useUser()
   const { notificationEvent } = useNotificationEvent()
@@ -43,7 +42,7 @@ const Navbar = () => {
         <Link to={routes.home}>
           <img
             className="max-h-16 md:max-h-40 ml-6"
-            src={LogoUiT}
+            src={LogoUIT}
             alt="logiUIT"
           />
         </Link>
@@ -60,11 +59,12 @@ const Navbar = () => {
             activeIcon={<AiFillHome className="w-10 h-10 text-[#0077FF]" />}
           />
 
-          <Navbaritem
-            to={config.todolist}
-            icon={<PiListChecks className="w-10 h-10" />}
-            activeIcon={<PiListChecksFill className="w-10 h-10 text-[#0077FF]" />}
-          />
+          {user?.role === "admin" || user?.role === "student" ?
+            (<Navbaritem
+              to={config.todolist}
+              icon={<PiListChecks className="w-10 h-10" />}
+              activeIcon={<PiListChecksFill className="w-10 h-10 text-[#0077FF]" />}
+            />) : null}
 
           {user?.role === "admin" ?
             (<Navbaritem

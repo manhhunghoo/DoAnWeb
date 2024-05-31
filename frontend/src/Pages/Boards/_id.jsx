@@ -178,7 +178,7 @@ function Board() {
     })
   }
 
-  if(!existsBoard) {
+  if (!existsBoard) {
     return (
       <CreateBroad user={user} setExistBroad={setExistsBoard} />
     )
@@ -200,7 +200,7 @@ function Board() {
   }
 
   return (
-    <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
+    <div className='h-full'>
 
       <BoardBar board={board} />
       <BoardContent
@@ -213,7 +213,7 @@ function Board() {
         moveCardToDifferentColumn={moveCardToDifferentColumn}
         deleteColumnDetails={deleteColumnDetails}
       />
-    </Container>
+    </div>
   )
 }
 

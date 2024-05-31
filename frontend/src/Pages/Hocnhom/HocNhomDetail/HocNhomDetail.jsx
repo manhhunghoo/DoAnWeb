@@ -123,7 +123,7 @@ export default function HocNhomDetail() {
         <div id="chat-service" 
             className='md:w-[25%] h-full w-[0%]
             bg-gradient-to-r from-[#56C596] to-[#7BE495] '>
-              <ListMember code={code} />
+              <ListMember code={code} owner={groupDetails?.owner}/>
         </div>
         <div id="chat-content" 
             className='h-full flex-1 

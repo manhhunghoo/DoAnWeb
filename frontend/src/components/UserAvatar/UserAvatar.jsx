@@ -1,12 +1,12 @@
-import React, {  useState } from 'react'
-import { Avatar} from '@mui/material';
+import React, { useState } from 'react'
+import { Avatar } from '@mui/material';
 import Badge from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
+const StyledBadge = styled(Badge)(({ theme,active }) => ({
     '& .MuiBadge-badge': {
-        backgroundColor: '#44b700',
-        color: '#44b700',
+        backgroundColor:  active ? '#44b700' : '#bdbdbd',
+        color: active ? '#44b700' : '#bdbdbd',
         boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
         '&::after': {
             position: 'absolute',
@@ -32,17 +32,17 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     }
 }))
 
-function UserAvatar({userInfo}) {
-    console.log('userInfo',userInfo)
-    //if(!userInfo) return null
+
+function UserAvatar({ userInfo }) {
     return (
         <>
-            <div  className='flex pd-y-2 gap-3 text-wrap md:my-4' >
+            <div className='flex pd-y-2 gap-3 text-wrap md:my-4' >
                 {/* <Link className='flex gap-3' to={`Profile/${user._id}`}> */}
                 <StyledBadge
                     overlap="circular"
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                     variant="dot"
+                    active={userInfo.status}
                 >
                     <Avatar
                         alt={`uit-course-avatar-of-${userInfo.username}`}

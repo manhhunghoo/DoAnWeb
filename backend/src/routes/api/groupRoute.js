@@ -25,7 +25,7 @@ Router.route("/:id/getAllgroupByAdmin") // get by id
   .get(groupController.getAllGroupByAdmin);
 Router.route("/:code/:owner").delete(groupController.deleteGroupByOwner);
 Router.route("/GetGroupOfStudent/:id").get(groupController.GetGroupOfStudent);
-Router.route("/GetListStudent/:id").get(groupModel.getListStudentOfGroup);
+Router.route("/GetListStudent/:code").get(groupModel.getListStudentOfGroup);
 Router.route("/GetlistMess/:code").get(groupController.getAllChatOfGroup);
 
 export const groupRoute = Router;

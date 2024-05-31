@@ -4,7 +4,6 @@ import { Avatar, Dialog, DialogContent, DialogTitle } from '@mui/material';
 import Badge from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
 import ProfileDetail from '../ProfileDetail';
-import { UserContext } from '../../App';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -74,7 +73,6 @@ function ListuserAcitve() {
                     setButtonSeeMore({ max_List: 5, text: 'Xem thêm' })
                 }
             }} className='bg-blue-500 text-white rounded-lg p-1 hover:bg-blue-800 '>{buttonSeemore.text}</button>
-            <UserContext.Provider value={{ selectedUser }}>
                 <ul >
                     {usersActive.map((user, index) => {
                         if (index >= max_List) {
@@ -104,8 +102,6 @@ function ListuserAcitve() {
                         )
                     })}
                 </ul>
-            </UserContext.Provider>
-
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Profile</DialogTitle>
                 <DialogContent>

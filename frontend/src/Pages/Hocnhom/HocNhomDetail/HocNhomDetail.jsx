@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState,useRef } from 'react'
 import { useParams } from 'react-router'
 import { useNavigate } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -11,16 +11,21 @@ import * as groups from '../../../service/groups'
 import useUser from '../../../hook/useUser'
 
 import { socket } from '../../../service/socket';
+import ListMember from '../../../components/group/ListMember';
+import ListMessage from '../../../components/group/ListMessage';
 // socket;
 // export const socket = io.connect("http://localhost:8017");
 
 export default function HocNhomDetail() {
-
+  // state and data 
   const {user} = useUser()
   const { code } = useParams()
   const navigate = useNavigate()
   const [groupDetails, setgroupDetails] = useState({})
   const [listMessage,setListMessage] = useState([{}])
+  //ref của thẻ input tin nhắn
+  const inputRef = useRef()
+  // function
   const handleBack = () => {
     navigate(-1)
   }
@@ -29,9 +34,12 @@ export default function HocNhomDetail() {
     formMessage.addEventListener('submit', (e) => {
       e.preventDefault()
       const message = formMessage.querySelector('#chat-send-input').value
+      if(message.trim() === '') return null
       const data = { message, code , linkimage: user.linkimage, username: user.username,userid: user._id }
       socket.emit("send_message", data );
       setListMessage(prevList => [...prevList,data ]);
+      formMessage.querySelector('#chat-send-input').value = ''
+      inputRef.current.focus()
     })
     groups.getMessageList(code)
     .then(res => {
@@ -115,29 +123,21 @@ export default function HocNhomDetail() {
         <div id="chat-service" 
             className='md:w-[25%] h-full w-[0%]
             bg-gradient-to-r from-[#56C596] to-[#7BE495] '>
+              <ListMember code={code} />
         </div>
         <div id="chat-content" 
             className='h-full flex-1 
             bg-gradient-to-r from-[#FF9CDA] to-[#EA4492]'>
           <div id="chat-message" className='mt-0 overflow-y-scroll h-4/5'>
-             <ul>
-              {(listMessage.length>0)&&listMessage.map((message,index) => {
-                return (
-                  <li index={index}>
-                    <p>{message.username}</p>
-                    <p>{message.message}</p>
-                  </li>
-                )
-              })
-            }
-             </ul>
+            <ListMessage listMessage={listMessage} />
           </div>
           {/* chat send */}
           <div id="chat-send" className='h-1/5'>
             <form className='h-full box-border p-2' id='message-group-chat-form'>
               <input type="text" placeholder='Type your message here' 
-                  className='box-border w-[70%] mx-[5%] h-full rounded-xl' 
+                  className='box-border w-[70%] mx-[5%] h-full rounded-xl px-4 py-1 bg-white text-black' 
                   id = 'chat-send-input'
+                  ref={inputRef}
                   />  
               <span className='w-1/5 box-border' id="more-type-message">
                 <Tooltip title='image'>

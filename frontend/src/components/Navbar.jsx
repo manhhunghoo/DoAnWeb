@@ -13,6 +13,7 @@ import config from "../config/routes"
 import Search from "./NavBar/Search"
 import useUser from "../hook/useUser"
 import useNotificationEvent from "../hook/useNotificationEvent"
+ import LogoUiT from '../assets/LogoUIT.svg' 
 
 const Navbar = () => {
   const { user } = useUser()
@@ -42,7 +43,7 @@ const Navbar = () => {
         <Link to={routes.home}>
           <img
             className="max-h-16 md:max-h-40 ml-6"
-            src="./src/assets/LogoUIT.svg"
+            src={LogoUiT}
             alt="logiUIT"
           />
         </Link>

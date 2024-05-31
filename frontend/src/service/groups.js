@@ -89,8 +89,19 @@ const getMessageList = async (code) => {
         throw err.response
     }
 }
+
+const getListStudentOfGroup = async (code) => {
+    try{
+        const response = await httpRequest.get(`/groups/GetListStudent/${code}`)
+        return response
+
+    } catch (err) {
+        throw err.response
+    }
+}
 export {
     getMessageList,
+    getListStudentOfGroup,
     deleteGroupByCode,
     getAllGroupByAdmin,
     leaveGroup,

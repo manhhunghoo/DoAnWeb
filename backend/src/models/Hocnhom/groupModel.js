@@ -302,7 +302,7 @@ const getListStudentOfGroup = async (req, res, next) => {
       .aggregate([
         {
           $match: {
-            code: req.params.id,
+            code: req.params.code,
           },
         },
         {

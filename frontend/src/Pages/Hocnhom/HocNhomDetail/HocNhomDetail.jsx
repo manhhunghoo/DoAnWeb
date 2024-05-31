@@ -106,7 +106,7 @@ export default function HocNhomDetail() {
           <ul className='flex-col md:flex-row gap-2 pr-2 md:flex hidden'>
             <li className='hover:bg-[#FF7A7B]'>Member</li>
             <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
-            <li className='hover:bg-[#FF7A7B]'>Showcode</li>
+            <li className='hover:bg-[#FF7A7B]' onClick={() => {alert(code)}}>Showcode</li>
             <li className='hover:bg-[#FF7A7B]'>Member</li>
           </ul>
         </div>
@@ -115,8 +115,8 @@ export default function HocNhomDetail() {
         bg-gradient-to-r from-[#FFDCA2] to-[#FF7A7B]
         flex items-center gap-2 pr-2 hidden' id="nav-bar-group-action">
         <li className='hover:bg-[#FF7A7B]'>Member</li>
-        <li className='hover:bg-[#FF7A7B]'>Leave</li>
-        <li className='hover:bg-[#FF7A7B]'>Showcode</li>
+        <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
+        <li className='hover:bg-[#FF7A7B]' onClick={() => {alert(code)}}>Showcode</li>
         <li className='hover:bg-[#FF7A7B]'>Member</li>
       </ul>
       <div id="chatbox" className='flex h-[calc(100%-56px)] bg-slate-500'>

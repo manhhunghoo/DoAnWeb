@@ -46,7 +46,7 @@ const Sidebar = () => {
     ]
 
     return (
-        <div className="bg-white mt-8 h-[763px] rounded-tr-[1.88rem] rounded-br-[1.88rem] ">
+        <div className="bg-white mt-8 h-[763px] border border-blue-500 shadow-lg shadow-gray-400 rounded-tr-[1.88rem] rounded-br-[1.88rem] ">
             <div
                 className={` ${open ? "w-64" : "w-20"
                     }  flex p-5 pt-8 relative duration-300`}

@@ -28,7 +28,7 @@ export default function PostItem({ post }) {
   return (
     <>
       {/* {showUpdate && <UpdatePost post={post} setShowUpdate={setShowUpdate} />} */}
-      <li className='flex md:flex-row flex-col gap-1 w-[80%] shadow-lg bg-white mx-auto rounded-3xl my-4 overflow-hidden h-auto'>
+      <li className='flex md:flex-row flex-col gap-1 w-[80%] shadow-lg bg-gradient-to-r from-[#99c3f3] to-[#B5D5FB] border-2 border-gray-800  shadow-gray-500 mx-auto rounded-3xl my-4 overflow-hidden h-auto'>
         <div className="m-auto md:w-1/5">
           <img src={'https://i.pinimg.com/736x/a5/20/0f/a5200f19de6c7b5d35b89262cd73e129.jpg' && post.linkPDF} alt={`Post-image-${post.title}-image`} />
         </div>

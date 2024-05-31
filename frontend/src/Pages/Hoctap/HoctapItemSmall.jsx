@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const HocTapItemSmall = ({ HocTap }) => { // tạo props với object
   return (
     <Link to={`/Hoctappage/${HocTap._id}`}>
-      <div className=" ml-3 mb-3 frame rounded-md bg-white wrap">
+      <div className=" ml-3 mb-3 frame rounded-md bg-white border-2 border-gray-800 wrap shadow-lg shadow-gray-500 ">
         <img src={HocTap.linkimage}
           className="mt-3 ml-2 rounded-md frame"
           style={{ height: "166.27px", width: "175.53px" }}

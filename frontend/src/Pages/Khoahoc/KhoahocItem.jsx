@@ -37,12 +37,12 @@ const KhoahocItem = ({ KhoaHoc, className }) => {
   }, [])
 
   return (
-    <div className={`md:ml-4 frame rounded-md bg-white wrap h-auto ${className}`}>
+    <div className={`md:ml-4 frame rounded-md bg-white border-2 border-gray-800 wrap shadow-lg shadow-gray-500 h-auto ${className}`}>
       <Link to={`/Khoahocpage/${KhoaHoc._id}/${KhoaHoc.owner}`}>
         <img
           src={KhoaHoc.linkimage}
-          className="mt-4 ml-2 rounded-md frame"
-          style={{ height: "166.27px", width: "175.53px" }}
+          className="mt-4 ml-2 rounded-md border border-gray-800  frame"
+          style={{ height: "166.27px", width: "175.53px", borderRadius: '10px', borderImage: '10px' }}
           alt={KhoaHoc.title}
         />
         {/* muốn thêm ảnh thì thêm src trong cái mảng*/}
@@ -59,7 +59,7 @@ const KhoahocItem = ({ KhoaHoc, className }) => {
             <FontAwesomeIcon icon={faUser} /> {KhoaHoc.memberof}
           </span>
           <span className="text-red-500 gap-1 items-center flex mr-1">
-            <FaTrophy />{mark}
+            <FaTrophy />{mark} điểm
           </span>
         </div>
 

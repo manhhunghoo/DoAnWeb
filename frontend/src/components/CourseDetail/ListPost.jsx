@@ -39,7 +39,7 @@ export default function ListPost({ item }) {
 
       {listPosts.map((post, index) => {
         return (
-          <li className='flex md:flex-row flex-col gap-1 w-[80%] shadow-lg bg-white mx-auto rounded-3xl my-4 overflow-hidden h-auto'
+          <li className='flex md:flex-row flex-col gap-1 w-[80%] shadow-lg bg-gradient-to-r border-2 border-black from-[#9abfea] to-[#B5D5FB]  mx-auto rounded-3xl my-4 overflow-hidden h-auto'
             key={index}
 
           >

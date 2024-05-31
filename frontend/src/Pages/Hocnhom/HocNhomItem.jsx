@@ -17,7 +17,7 @@ const HocNhomItem = ({ HocNhom, setReRender }) => { // tạo props với object
       })
   }
   return (
-    <div className='md:ml-4 frame rounded-md bg-white wrap h-auto '>
+    <div className='md:ml-4 frame rounded-md bg-white border-2 border-gray-800 wrap shadow-lg shadow-gray-500 h-auto '>
       <Link to={`/Hocnhompage/${HocNhom.code}`}>
         <img src={HocNhom.linkImage}
           className='mt-4 ml-2 rounded-md frame'

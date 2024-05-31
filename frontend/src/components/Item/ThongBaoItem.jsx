@@ -23,10 +23,10 @@ export default function ThongBaoItem({ thongbao }) {
     return <></>
   return (
     <>
-      <li className='flex w-[70%] bg-white mx-auto rounded-3xl shadow-lg my-4 overflow-hidden h-auto md:pl-8 md:pb-8 pb-4 pl-4'>
+      <li className='flex w-[70%] bg-gradient-to-r from-[#CAF4FF] to-blue-200 bg-opacity-50 mx-auto rounded-3xl shadow-lg my-4 overflow-hidden h-auto md:pl-8 md:pb-8 pb-4 pl-4'>
         <div className='w-full'>
           <div className='flex justify-between'>
-            <div className='text-sm font-thin mt-4 mb-2 bg-white shadow py-[2px] text-center rounded-md'>đã tạo:{useTime(thongbao.createdAt)}</div>
+            <div className='text-sm font-thin mt-4 mb-2  shadow py-[2px] text-center rounded-md'>Đã tạo:{useTime(thongbao.createdAt)}</div>
             <div className='relative'>
               <Tooltip
                 title={<More className=" bg-blue-500 w-auto text-white" myEvent={{ handleDelete }} />}
@@ -37,7 +37,7 @@ export default function ThongBaoItem({ thongbao }) {
             </div>
 
           </div>
-          <h3 className='font-bold text-xl bg-slate-100 hover:bg-slate-300 max-w-[70%] w-auto rounded-md shadow pl-8'>Type:{thongbao.nameevent}</h3>
+          <h3 className='font-bold text-xl text-[#4D869C] max-w-[70%] w-auto  pl-8'>Type:{thongbao.nameevent}</h3>
           <p>bạn cùng <b>{thongbao.listimpact.length}</b> người khác nhận</p>
         </div>
       </li>

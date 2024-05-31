@@ -71,7 +71,7 @@ export const UserProfile = () => {
         <div className='flex w-[14rem] rounded-lg' >
             <div>
                 <h1 className='font-bold'>{user.username}</h1>
-                <h2 className='text-gray-500'>MMTT2022</h2>
+                <h2 className='text-gray-500'>{user.role}</h2>
             </div>
             <React.Fragment>
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>

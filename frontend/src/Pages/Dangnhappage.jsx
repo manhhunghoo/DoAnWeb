@@ -56,10 +56,10 @@ const Dangnhappage = () => {
   };
 
   return (
-    <div className="flex bg-[#F0F7FF] flex-col items-center justify-center flex-1 px-20 text-center">
+    <div className="flex bg-[#F0F7FF] flex-col items-center justify-center h-screen flex-1 px-20 text-center">
       <main className="flex flex-col items-center w-full flex-1 px-20 text-center mt-9">
         <div className="rounded-2xl shadow-2xl h-[500px] flex max-w-3xl">
-          <div className="md:w-4/5 p-6">
+          <div className="md:w-3/5 p-6">
             <div className=" py-8">
               <img
                 className="px-24 "

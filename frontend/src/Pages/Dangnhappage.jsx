@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import loginImg from "../assets/BackgroundLogin.svg";
-
+import LogoUIT from "../assets/LogoUIT.svg"
 import validator from "../hook/validate";
 import * as serivce from "../service/authentic";
 
@@ -58,12 +58,12 @@ const Dangnhappage = () => {
   return (
     <div className="flex bg-[#F0F7FF] flex-col items-center justify-center h-screen flex-1 px-20 text-center">
       <main className="flex flex-col items-center w-full flex-1 px-20 text-center mt-9">
-        <div className="rounded-2xl shadow-2xl h-[500px] flex max-w-3xl">
+        <div className="rounded-2xl shadow-2xl h-[550px] flex max-w-3xl">
           <div className="md:w-3/5 p-6">
-            <div className=" py-8">
+            <div className=" py-6">
               <img
-                className="px-24 "
-                src="./src/assets/LogoUIT.svg"
+                className=" w-28 h-28 ml-12 "
+                src={LogoUIT}
                 alt="logiUIT"
               />
               <h2 className="text-3xl mt-2 font-bold text-black mb-2">
@@ -93,12 +93,12 @@ const Dangnhappage = () => {
                   />
                   {showPassword ? (
                     <FaRegEye
-                      className="absolute fill-gray-400 top-7 right-3 -translate-y-1/2 inline-block w-5 h-5 mr-8 cursor-pointer"
+                      className="absolute fill-gray-400 top-7 right-3 -translate-y-1/2 inline-block w-5 h-5 mr-1 cursor-pointer"
                       onClick={togglePasswordVisibility}
                     />
                   ) : (
                     <FaRegEyeSlash
-                      className="absolute fill-gray-400 top-7 right-3 -translate-y-1/2 inline-block w-5 h-5 mr-8 cursor-pointer"
+                      className="absolute fill-gray-400 top-7 right-3 -translate-y-1/2 inline-block w-5 h-5 mr-1 cursor-pointer"
                       onClick={togglePasswordVisibility}
                     />
                   )}
@@ -110,7 +110,7 @@ const Dangnhappage = () => {
                     type="text"
                     id="role-login"
                     name="role"
-                    placeholder="admin , teacher , student"
+                    placeholder="admin, teacher, student"
                   />
                   <span className="form-message block  text-red-500"></span>
                 </div>
@@ -122,13 +122,13 @@ const Dangnhappage = () => {
                   />
                   <label htmlFor="rememberPassword">Nhớ tài khoản của tôi</label>
                 </div>
-                <button className="form-submit">
+                <button className="form-submit -mt-2">
                   {" "}
                   <p className="bg-[#0077FF] hover:scale-110 mt-6 rounded-lg text-white px-4 py-1 inline-block font-semibold hover:bg-[#2e7bd9] hover:text-white">
                     Đăng nhập
                   </p>
                 </button>
-                <p className="text-sm mt-4">
+                <p className="text-sm mt-2">
                   <a href="*">Quên mật khẩu?</a>
                 </p>
               </form>

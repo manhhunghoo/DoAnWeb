@@ -55,7 +55,7 @@ export default function PostItem({ post }) {
           <h3 className='font-bold text-xl max-w-[70%] w-auto rounded-md pl-8'>{post.title}</h3>
           <div className='flex-col h-full m-8'>
             <a href={post.linkPDF} target='_blank' rel="noreferrer"> PDF or image: {post.linkPDF}</a>
-            <p > description: {post.description}</p>
+            <p > Description: {post.description}</p>
             <div className='flex md:mt-12 mt-4'>
               {post?.like}<FavoriteIcon sx={{ color: pink[500] }} fontSize='small' className='mx-4' />
               {post?.comment}<ChatBubbleIcon color="primary" fontSize='small' className='mx-4' />

@@ -31,8 +31,8 @@ function Search() {
         const fetchApi = async () => {
             const result = await searchServices.search(debouncedValue);
             setLoading(true);
-            if(result?.length > 0 && result)
-             setSearchResult(result);
+            if (result?.length > 0 && result)
+                setSearchResult(result);
             else setSearchResult([]);
             setLoading(false)
         };
@@ -58,7 +58,7 @@ function Search() {
     };
 
     const GetLinkImage = (object) => {
-        if (object.linkimage == ''||object.linkimage == null) {
+        if (object.linkimage == '' || object.linkimage == null) {
             return LINK_IMAGE;
         }
         return object.linkimage;
@@ -73,21 +73,22 @@ function Search() {
                 interactive
                 visible={showResult > 0 && searchResult.length > 0}
                 render={(attrs) => (
-                    <div tabIndex="-1" {...attrs} className="bg-white md:p-10">
+                    <div tabIndex="-1" {...attrs} className="bg-white p-3 rounded-lg shadow-lg border border-blue-400">
                         <ul>
-                            {searchResult.length>0&&searchResult.map((result,index) => (
-                                <li key={index} className="flex hover:bg-slate-300 md:m-2 p-1 rounded-xl">
+                            {searchResult.length > 0 && searchResult.map((result, index) => (
+                                <li key={index} className="flex items-center gap-3 p-2 lg:p-4 border border-transparent border-b-slate-200 hover:border hover:border-blue-300 rounded cursor-pointer">
                                     <div>
-                                        <Avatar src={GetLinkImage(result)}  alt={`${result.description}-${result.title}-UITCourse`}/>
+                                        <Avatar src={GetLinkImage(result)} alt={`${result.description}-${result.title}-UITCourse`} />
                                     </div>
                                     <Link to={`/Khoahocpage/${result?._id}/${result?.owner}`}>
-                                        <p>{result.title}</p>
-                                        <time >create:{useTime(result.createdAt)}</time>
+                                        <p className="font-semibold text-ellipsis line-clamp-1">{result.title}</p>
+                                        <p className='text-sm text-ellipsis line-clamp-1' > <time >Create:{useTime(result.createdAt)}</time></p>
                                     </Link>
                                 </li>
-                            ))}
-                        </ul>
-                    </div>
+                            ))
+                            }
+                        </ul >
+                    </div >
                 )}
                 onClickOutside={handleHideResult}
             >
@@ -113,8 +114,8 @@ function Search() {
                     <button onMouseDown={(e) => e.preventDefault()}>
                     </button>
                 </div>
-            </HeadlessTippy>
-        </div>
+            </HeadlessTippy >
+        </div >
     );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router'
-import { useNavigate, Outlet } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import SendIcon from '@mui/icons-material/Send';
@@ -85,15 +85,10 @@ export default function HocNhomDetail() {
         })
     }
   }
-  const basePath = location.pathname === '/'
+
   return (
-    <div className='grid lg:grid-cols-[300px,1fr] h-screen max-h-screen'>
-
-      <section className="bg-white lg:block">
-        <ListMember />
-      </section>
-
-      {/* <nav className='flex justify-between 
+    <div className='relative h-full'>
+      <nav className='flex justify-between 
         bg-gradient-to-r from-[#FE676E] to-[#FD8F52] 
         align-middle items-center
         px-3 md:px-5 h-14'>
@@ -108,45 +103,20 @@ export default function HocNhomDetail() {
             onClick={handleSeeNav}>
             More<MoreVertIcon />
           </button>
-          <ul className='flex-col md:flex-row gap-2 pr-2 md:flex hidden'>
+          <ul className='flex-col md:flex-row gap-2 pr-2 md:flex hidden ' id="nav-bar-group-action">
             <li className='hover:bg-[#FF7A7B]'>Member</li>
             <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
             <li className='hover:bg-[#FF7A7B]' onClick={() => { alert(code) }}>Showcode</li>
             <li className='hover:bg-[#FF7A7B]'>Member</li>
           </ul>
         </div>
-      </nav> */}
-      <section className={`${basePath && "hidden"}`}>
-        <Outlet />
-      </section>
+      </nav>
 
-
-
-
-      <div className="justify-center items-center flex-col gap-2 lg:flex">
-        {/* <div>
-          <img
-            src={logo}
-            width={250}
-            alt='logo'
-          />
-        </div> */}
-        <p className='text-lg mt-2 text-slate-500'>Select user to send message</p>
-      </div>
-
-      {/* <ul className='flex-col  
-        bg-gradient-to-r from-[#FFDCA2] to-[#FF7A7B]
-         items-center gap-2 pr-2 hidden' id="nav-bar-group-action">
-        <li className='hover:bg-[#FF7A7B]'>Member</li>
-        <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
-        <li className='hover:bg-[#FF7A7B]' onClick={() => { alert(code) }}>Showcode</li>
-        <li className='hover:bg-[#FF7A7B]'>Member</li>
-      </ul> */}
       <div id="chatbox" className='flex h-[calc(100%-56px)] bg-slate-500'>
         <div id="chat-service"
           className='md:w-[25%] h-full w-[0%]
             bg-gradient-to-r from-[#56C596] to-[#7BE495] '>
-
+          <ListMember code={code} owner={groupDetails?.owner} />
         </div>
         <div id="chat-content"
           className='h-full flex-1 
@@ -177,7 +147,6 @@ export default function HocNhomDetail() {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
-

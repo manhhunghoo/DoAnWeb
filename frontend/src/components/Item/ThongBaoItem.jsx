@@ -27,7 +27,7 @@ export default function ThongBaoItem({ thongbao }) {
         <div className='w-full'>
           <div className='flex justify-between'>
             <div className='text-sm font-thin mt-4 mb-2  shadow py-[2px] text-center rounded-md'>Đã tạo:{useTime(thongbao.createdAt)}</div>
-            <div className='relative'>
+            <div className='relative mt-4 mr-4'>
               <Tooltip
                 title={<More className=" bg-blue-500 w-auto text-white" myEvent={{ handleDelete }} />}
                 open={open} onClick={handleTooltipClick}
@@ -37,8 +37,8 @@ export default function ThongBaoItem({ thongbao }) {
             </div>
 
           </div>
-          <h3 className='font-bold text-xl text-[#4D869C] max-w-[70%] w-auto  pl-8'>Type:{thongbao.nameevent}</h3>
-          <p>bạn cùng <b>{thongbao.listimpact.length}</b> người khác nhận</p>
+          <h3 className='font-bold text-xl text-[#4D869C] max-w-[70%] w-auto  pl-8'>Tilte:{thongbao.nameevent}</h3>
+          <p>Bạn cùng <b>{thongbao.listimpact.length}</b> người khác nhận</p>
         </div>
       </li>
     </>

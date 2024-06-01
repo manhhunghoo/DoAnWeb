@@ -6,6 +6,9 @@ let apiRoot = ''
 if (process.env.BUILD_MODE === 'dev') {
   apiRoot = 'http://localhost:8017'
 }
+else if (process.env.BUILD_MODE === 'production') {
+  apiRoot = 'https://trello-api-0gbu.onrender.com'
+}
 
 // Môi trường Production sẽ cần api endpoint chuẩn của các bạn
 // if (process.env.BUILD_MODE === 'production') {

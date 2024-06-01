@@ -1,3 +1,3 @@
 import io from "socket.io-client";
-
-export const socket = io.connect("http://localhost:8017");
+import { API_ROOT } from "../utils/constants";
+export const socket = io.connect(API_ROOT);

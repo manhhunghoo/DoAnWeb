@@ -9,9 +9,9 @@ function ListMessage({ listMessage }) {
                 {(listMessage.length > 0) && listMessage.map((message, index) => {
                     const previousMessage = listMessage[index - 1]; // Tin nhắn trước đó
                     const isSameSender = previousMessage && previousMessage.userid === message.userid;
-                    console.log('isSameSender', isSameSender,index)
+                    console.log('isSameSender', isSameSender, index)
                     return (
-                        <li index={index}>
+                        <li key={index}>
                             <MessageItem message={message} isSameSender={!isSameSender} />
                         </li>
                     )

@@ -15,10 +15,13 @@ const HocTapItemSmall = ({ HocTap }) => { // tạo props với object
         <div className="ml-2.5 mt-2">
           <h1 className="font-bold text-xs mb-2">{HocTap.title}</h1>{/* content của môn học*/}
           <p className="font-thin text-xs mb-1">GVLT: {HocTap.khoa}</p>
-          <p className="font-thin text-xs mb-1">info: {HocTap.description}</p>
-          <p className="font-bold text-red-600"><span className="text-black">
-            <FontAwesomeIcon icon={faUser} />
-          </span> {HocTap.memberof}</p>
+          <div className="flex">
+            <p className="font-thin text-xs mb-1">Mô tả: {HocTap.description}</p>
+
+            <p className="font-bold ml-20 text-red-600"><span className="text-black">
+              <FontAwesomeIcon icon={faUser} />
+            </span> {HocTap.memberof}</p>
+          </div>
         </div>
       </div>
     </Link>

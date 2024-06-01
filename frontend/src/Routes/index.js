@@ -29,7 +29,7 @@ import ShowTeachers from "../Pages/Schoolweb/admin/teacherRelated/ShowTeachers";
 import Profile from "../components/NavBar/Profile";
 import ProfileDetail from "../components/ProfileDetail";
 import TodolistLayout from "../components/Layout/TodolistLayout";
-
+import AdminSettingLayout from "../components/Layout/AdminSettingLayout"
 
 const publicRoutes = [
   { path: routesConfig.dangxuat, component: Dangnhappage, layout: DangnhapLayout },
@@ -49,17 +49,17 @@ const privateRoutes = [
   { path: routesConfig.khoahocitem, component: KhoahocitemDetail, layout: KhoahocitemDetailLayout },
   { path: routesConfig.schoolweb, component: StudentDashboard, layout: DangnhapLayout },
   { path: routesConfig.hocnhomitem, component: HocnhomDetail, layout: HocnhomDetailLayout },
-  { path: routesConfig.setting, component: AdminHomePage, layout: KhoahocitemDetailLayout },
+  { path: routesConfig.setting, component: AdminHomePage, layout: AdminSettingLayout },
   { path: routesConfig.todolist, component: Board },
   { path: routesConfig.setprofile, component: Profile },
   { path: routesConfig.profiledetail, component: ProfileDetail }
 ]
 
 const adminRoutes = [
-  { path: "/Admin/Setting/classes", component: ShowClasses, layout: AdminDashboard },
-  { path: "/Admin/Setting/students", component: ShowStudents, layout: AdminDashboard },
-  { path: "/Admin/Setting/groups", component: ShowSubjects, layout: AdminDashboard },
-  { path: "/Admin/Setting/teachers", component: ShowTeachers, layout: AdminDashboard },
+  { path: "/Admin/Setting/classes", component: ShowClasses, layout: AdminSettingLayout },
+  { path: "/Admin/Setting/students", component: ShowStudents, layout: AdminSettingLayout },
+  { path: "/Admin/Setting/groups", component: ShowSubjects, layout: AdminSettingLayout },
+  { path: "/Admin/Setting/teachers", component: ShowTeachers, layout: AdminSettingLayout }
 ]
 // Phải đăng nhập mới vào được
 export { publicRoutes, privateRoutes, adminRoutes };

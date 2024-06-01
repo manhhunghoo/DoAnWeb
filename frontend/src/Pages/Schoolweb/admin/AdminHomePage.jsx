@@ -47,61 +47,48 @@ const AdminHomePage = () => {
     }, [])
     return (
         <>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Drawer variant="permanent" open={open} sx={open ? styles.drawerStyled : styles.hideDrawer}>
-                    <Toolbar sx={styles.toolBarStyled}>
-                        <IconButton onClick={toggleDrawer}>
-                            <ChevronLeftIcon />
-                        </IconButton>
-                    </Toolbar>
-                    <Divider />
-                    <List component="nav">
-                        <SideBar />
-                    </List>
-                </Drawer>
+            <Container maxWidth="full" maxHeight="full" sx={{ mt: 4, mb: 4 }}>
+
                 <Grid container spacing={3}>
-                    <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
-                            <img src="../../src/assets/cap.svg" alt="Students" className='h-32 w-32' />
+                    <Grid item xs={12} md={3} lg={3} >
+                        <StyledPaper sx={{ border: '1px solid black', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
+                            <img src="../../src/assets/cap.svg" alt="Students" className='h-28 w-28' />
                             <Title>
-                                Total Students: {listStudent?.length}
+                                Tổng số sinh viên
                             </Title>
-                            {/* <Data start={0} end={numberOfStudents} duration={2.5} /> */}
+                            <Data start={0} end={listStudent?.length} duration={2.5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
-                            <img src="../../src/assets/book1.svg" alt="Classes" className='h-32 w-32' />
+                        <StyledPaper sx={{ border: '1px solid black', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
+                            <img src="../../src/assets/book1.svg" alt="Classes" className='h-28 w-28' />
                             <Title>
-                                Total Classes:{listCourse?.length}
+                                Tổng số khóa học
                             </Title>
-                            {/* <Data start={0} end={numberOfClasses} duration={5} /> */}
+                            <Data start={0} end={listCourse?.length} duration={5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
-                            <img src="../../src/assets/teacher.svg" alt="Teachers" className='h-32 w-32' />
+                        <StyledPaper sx={{ border: '1px solid black', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
+                            <img src="../../src/assets/teacher.svg" alt="Teachers" className='h-28 w-28' />
                             <Title>
-                                Total Teachers:{listTeacher?.length}
+                                Tống số giáo viên
                             </Title>
-                            {/* <Data start={0} end={numberOfTeachers} duration={2.5} /> */}
+                            <Data start={0} end={listTeacher?.length} duration={2.5} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
+                        <StyledPaper sx={{ border: '1px solid black', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
                             <img src="../../src/assets/fee.svg" alt="Fees" className='h-28 w-28' />
                             <Title>
-                                Fees Collection
+                                Học phí:
                             </Title>
                             <Data start={0} end={listStudent.length * 500} duration={2.5} prefix="$" />                        </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={12} lg={12}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            <SeeNotice />
-                        </Paper>
-                    </Grid>
+
                 </Grid>
-            </Container>
+
+            </Container >
         </>
     );
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
-
+import { API_ROOT } from "./constants";
 const httpRequest = axios.create({
-  baseURL: "http://localhost:8017/api/",
+  baseURL:`${API_ROOT}/api`,
 });
 
 const get = async (url, config) => {

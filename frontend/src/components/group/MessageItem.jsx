@@ -45,7 +45,7 @@ function MessageItem({ message, isSameSender }) {
                     <div className='w-10 h-10 rounded-full'></div>
                 )}
                 <div className='w-auto'>
-                    {!isSameSender && <h4 className='font-bold'>{message.username}</h4>}
+                    {isSameSender && <h4 className='font-bold'>{message.username}</h4>}
                     <p
                         onClick={handleToggleTime}
                         className='font-thin p-2 bg-gradient-to-r max-w-[300px] from-[#7de2fc] to-[#7de2fc] inline-block box-content rounded-xl break-words'>

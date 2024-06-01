@@ -73,35 +73,36 @@ function ListuserAcitve() {
                     setButtonSeeMore({ max_List: 5, text: 'Xem thêm' })
                 }
             }} className='bg-blue-500 text-white rounded-lg p-1 hover:bg-blue-800 '>{buttonSeemore.text}</button>
-                <ul >
-                    {usersActive.map((user, index) => {
-                        if (index >= max_List) {
-                            return
-                        }
-                        return (
+            <ul >
+                {usersActive.map((user, index) => {
+                    if (index >= max_List) {
+                        return
+                    }
+                    return (
 
 
-                            <li key={index} className='flex pd-y-2 gap-3 text-wrap md:my-4' onClick={() => handleUserClick(user)}>
-                                {/* <Link className='flex gap-3' to={`Profile/${user._id}`}> */}
-                                <StyledBadge
-                                    overlap="circular"
-                                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                    variant="dot"
-                                >
-                                    <Avatar
-                                        alt={`uit-course-avatar-of-${user.username}`}
-                                        src={(user.linkimage) ? user.linkimage : 'https://th.bing.com/th/id/OIP.j_sPXvgD1NS2aHjbgAB5UAHaJN?w=150&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7'} />
-                                </StyledBadge>
-                                <div className='info avatar'>
-                                    <p className='font-bold'>{user.username}</p>
-                                    <p className='font-thin'>{user.email}</p>
-                                </div>
-                                {/* </Link> */}
+                        <li key={index} className='flex pd-y-2 gap-3 text-wrap md:my-4' onClick={() => handleUserClick(user)}>
+                            {/* <Link className='flex gap-3' to={`Profile/${user._id}`}> */}
+                            <StyledBadge
+                                overlap="circular"
+                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                variant="dot"
+                            >
+                                <Avatar
+                                    sx={{ width: 48, height: 48 }}
+                                    alt={`uit-course-avatar-of-${user.username}`}
+                                    src={(user.linkimage) ? user.linkimage : 'https://th.bing.com/th/id/OIP.j_sPXvgD1NS2aHjbgAB5UAHaJN?w=150&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7'} />
+                            </StyledBadge>
+                            <div className='info avatar'>
+                                <p className='font-bold'>{user.username}</p>
+                                <p className='font-thin'>{user.email}</p>
+                            </div>
+                            {/* </Link> */}
 
-                            </li>
-                        )
-                    })}
-                </ul>
+                        </li>
+                    )
+                })}
+            </ul>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Profile</DialogTitle>
                 <DialogContent>

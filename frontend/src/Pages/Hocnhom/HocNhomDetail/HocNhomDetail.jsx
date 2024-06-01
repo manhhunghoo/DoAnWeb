@@ -9,7 +9,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Tooltip } from '@mui/material';
 import * as groups from '../../../service/groups'
 import useUser from '../../../hook/useUser'
-
+import backgroundImage from '../../../assets/wallapaper.jpeg'
 import { socket } from '../../../service/socket';
 import ListMember from '../../../components/group/ListMember';
 import ListMessage from '../../../components/group/ListMessage';
@@ -89,7 +89,7 @@ export default function HocNhomDetail() {
   return (
     <div className='relative h-full'>
       <nav className='flex justify-between 
-        bg-gradient-to-r from-[#FE676E] to-[#FD8F52] 
+        bg-gradient-to-r from-blue-400 to-blue-200 bg-opacity-50 
         align-middle items-center
         px-3 md:px-5 h-14'>
         <div className='flex'>
@@ -103,24 +103,30 @@ export default function HocNhomDetail() {
             onClick={handleSeeNav}>
             More<MoreVertIcon />
           </button>
-          <ul className='flex-col md:flex-row gap-2 pr-2 md:flex hidden ' id="nav-bar-group-action">
-            <li className='hover:bg-[#FF7A7B]'>Member</li>
-            <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
-            <li className='hover:bg-[#FF7A7B]' onClick={() => { alert(code) }}>Showcode</li>
-            <li className='hover:bg-[#FF7A7B]'>Member</li>
+          <ul className='flex-col md:flex-row gap-4 pr-2 md:flex hidden'>
+            <li className='hover:bg-[#6068d5] hover:rounded-lg hover:p-1'>Member</li>
+            <li className='hover:bg-[#6068d5] hover:rounded-lg hover:p-1' onClick={handleLeave}>Leave</li>
+            <li className='hover:bg-[#6068d5] hover:rounded-lg hover:p-1' onClick={() => { alert(code) }}>Showcode</li>
+            <li className='hover:bg-[#6068d5] hover:rounded-lg hover:p-1'>Member</li>
           </ul>
         </div>
       </nav>
-
+      <ul className='flex-col  
+        bg-gradient-to-r from-[#FFDCA2] to-[#FF7A7B]
+         items-center gap-2 pr-2 hidden' id="nav-bar-group-action">
+        <li className='hover:bg-[#FF7A7B]'>Member</li>
+        <li className='hover:bg-[#FF7A7B]' onClick={handleLeave}>Leave</li>
+        <li className='hover:bg-[#FF7A7B]' onClick={() => { alert(code) }}>Showcode</li>
+        <li className='hover:bg-[#FF7A7B]'>Member</li>
+      </ul>
       <div id="chatbox" className='flex h-[calc(100%-56px)] bg-slate-500'>
         <div id="chat-service"
-          className='md:w-[25%] h-full w-[0%]
-            bg-gradient-to-r from-[#56C596] to-[#7BE495] '>
+          className='md:w-[23%] h-full w-[0%]
+          bg-white border-[2px] border-blue-400 '>
           <ListMember code={code} owner={groupDetails?.owner} />
         </div>
         <div id="chat-content"
-          className='h-full flex-1 
-            bg-gradient-to-r from-[#FF9CDA] to-[#EA4492]'>
+          style={{ backgroundImage: `url(${backgroundImage})` }} className='bg-no-repeat h-full flex-1 bg-cover'>
           <div id="chat-message" className='mt-0 overflow-y-scroll h-4/5'>
             <ListMessage listMessage={listMessage} />
           </div>
@@ -128,7 +134,7 @@ export default function HocNhomDetail() {
           <div id="chat-send" className='h-1/5'>
             <form className='h-full box-border p-2' id='message-group-chat-form'>
               <input type="text" placeholder='Type your message here'
-                className='box-border w-[70%] mx-[5%] h-full rounded-xl px-4 py-1 bg-white text-black'
+                className='box-border w-[70%] mx-[5%] h-[80%] rounded-xl mt-3 px-3 py-1 bg-white border-[2px] border-blue-300 text-black'
                 id='chat-send-input'
                 ref={inputRef}
               />

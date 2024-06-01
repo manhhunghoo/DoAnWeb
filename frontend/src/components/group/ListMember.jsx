@@ -32,7 +32,7 @@ function ListMember({ code, owner }) {
         }
     }
     return (
-        <div>
+        <div className='ml-4 mr-2 '>
             <h3 className='mt-2 mr-2 p-2 
                         font-medium md:font-extrabold
                         text-lg  md:text-xl '>Danh sách thành viên</h3>
@@ -40,10 +40,13 @@ function ListMember({ code, owner }) {
                 {listMember.length > 0 && listMember.map((member, index) => {
                     return (
                         <>{member.listMemOfGroup &&
-                            <li key={index} className='flex'>
-                                <UserAvatar userInfo={member.listMemOfGroup} />
+                            <li key={index} className='flex items-center gap-2  border border-transparent hover:border-primary rounded hover:bg-slate-100 cursor-pointer'>
+                                <div className='hidden sm:block'>
+                                    <UserAvatar userInfo={member.listMemOfGroup} />
+                                </div>
                                 {member.listMemOfGroup._id == owner && <p className='font-bold'>Owner</p>}
-                                {((user.role == 'admin' || user._id == owner) && !(member.listMemOfGroup._id == owner)) && <Button onClick={() => handleKick(member.listMemOfGroup._id)}>Kick</Button>}
+                                {((user.role == 'admin' || user._id == owner) && !(member.listMemOfGroup._id == owner)) && <Button className='hidden sm:block' onClick={() => handleKick(member.listMemOfGroup._id)}>Kick</Button>}
+
                             </li>}</>
                     )
                 })}

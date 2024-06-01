@@ -3,9 +3,9 @@ import { Avatar } from '@mui/material';
 import Badge from '@mui/material/Badge'
 import { styled } from '@mui/material/styles'
 
-const StyledBadge = styled(Badge)(({ theme,active }) => ({
+const StyledBadge = styled(Badge)(({ theme, active }) => ({
     '& .MuiBadge-badge': {
-        backgroundColor:  active ? '#44b700' : '#bdbdbd',
+        backgroundColor: active ? '#44b700' : '#bdbdbd',
         color: active ? '#44b700' : '#bdbdbd',
         boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
         '&::after': {
@@ -45,6 +45,10 @@ function UserAvatar({ userInfo }) {
                     active={userInfo.status}
                 >
                     <Avatar
+                        sx={{
+                            width: 50, height: 50, border: '4px solid #BBE2EC',
+                            borderRadius: '100%'
+                        }}
                         alt={`uit-course-avatar-of-${userInfo.username}`}
                         src={(userInfo.linkimage) ? userInfo.linkimage : 'https://th.bing.com/th/id/OIP.j_sPXvgD1NS2aHjbgAB5UAHaJN?w=150&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7'} />
                 </StyledBadge>

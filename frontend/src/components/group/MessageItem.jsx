@@ -17,7 +17,7 @@ function MessageItem({ message, isSameSender }) {
                     <div>
                         <p
                             onClick={handleToggleTime}
-                            className='font-thin p-2 bg-white inline-block box-content rounded-xl max-w-[300px] break-words'>
+                            className='font-thin p-2 bg-white inline-block box-content border-[2px] border-blue-300 rounded-xl max-w-[300px] break-words'>
                             {message.message}
                         </p>
                         {seeTime && (
@@ -40,7 +40,7 @@ function MessageItem({ message, isSameSender }) {
         <div className='flex gap-3 m-2'>
             <div className='flex gap-3'>
                 {isSameSender ? (
-                    <img className='w-10 h-10 rounded-full' src={message.linkimage} alt='avatar' />
+                    <img className='w-10 h-10  rounded-full' src={message.linkimage} alt='avatar' />
                 ) : (
                     <div className='w-10 h-10 rounded-full'></div>
                 )}
@@ -48,7 +48,7 @@ function MessageItem({ message, isSameSender }) {
                     {isSameSender && <h4 className='font-bold'>{message.username}</h4>}
                     <p
                         onClick={handleToggleTime}
-                        className='font-thin p-2 bg-gradient-to-r max-w-[300px] from-[#7de2fc] to-[#7de2fc] inline-block box-content rounded-xl break-words'>
+                        className='font-thin p-2 bg-gradient-to-r max-w-[300px] border-[2px] border-gray-500 from-[#7de2fc] to-[#7de2fc] inline-block box-content rounded-xl break-words'>
                         {message.message}
                     </p>
                     {seeTime && (

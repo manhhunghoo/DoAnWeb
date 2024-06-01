@@ -200,7 +200,7 @@ function Board() {
   }
 
   return (
-    <div className='h-full'>
+    <div>
 
       <BoardBar board={board} />
       <BoardContent
